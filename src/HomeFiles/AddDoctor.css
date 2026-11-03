@@ -1,0 +1,76 @@
+
+.add-doctor-page {
+  padding: 30px;
+  background: #f5faff;
+  min-height: 100vh;
+  color: #123c52;
+}
+
+.add-doctor-card {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(18, 60, 82, 0.1);
+}
+
+.add-doctor-card h2 {
+  margin-top: 0;
+  color: #123c52;
+}
+
+.add-doctor-card p {
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.add-doctor-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-doctor-card label {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.add-doctor-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.add-doctor-card input:focus {
+  outline: 2px solid #1685c5;
+  border-color: #1685c5;
+}
+
+.add-doctor-card button {
+  margin-top: 18px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #1685c5;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-doctor-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.add-doctor-message {
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 8px;
+  background: #eaf4ff;
+  overflow-wrap: anywhere;
+}

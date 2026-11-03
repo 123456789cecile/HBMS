@@ -1,0 +1,227 @@
+
+.doctor-login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f2f7fb;
+  color: #17384b;
+  font-family: Arial, sans-serif;
+}
+
+.doctor-login-header {
+  min-height: 76px;
+  padding: 0 7%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(18, 60, 82, 0.08);
+}
+
+.doctor-login-logo {
+  text-decoration: none;
+  color: #123c52;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.doctor-login-logo span {
+  color: #1685c5;
+}
+
+.doctor-login-home {
+  text-decoration: none;
+  color: #1685c5;
+  font-weight: 600;
+}
+
+.doctor-login-home:hover,
+.doctor-login-register a:hover {
+  text-decoration: underline;
+}
+
+.doctor-login-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 18px;
+}
+
+.doctor-login-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 38px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 12px 38px rgba(18, 60, 82, 0.1);
+}
+
+.doctor-login-icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e1f3fc;
+  font-size: 34px;
+}
+
+.doctor-login-eyebrow {
+  text-align: center;
+  color: #1685c5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.doctor-login-card h1 {
+  margin: 10px 0;
+  text-align: center;
+  color: #123c52;
+  font-size: 30px;
+}
+
+.doctor-login-subtitle {
+  margin: 0 0 28px;
+  color: #718391;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.doctor-login-field {
+  margin-bottom: 20px;
+}
+
+.doctor-login-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.doctor-login-field input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #d5e0e8;
+  border-radius: 9px;
+  outline: none;
+  background: #fbfdff;
+  font-size: 14px;
+}
+
+.doctor-login-field input:focus {
+  border-color: #1685c5;
+  box-shadow: 0 0 0 3px rgba(22, 133, 197, 0.12);
+}
+
+.doctor-password-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 10px;
+  border: 1px solid #d5e0e8;
+  border-radius: 9px;
+  background: #fbfdff;
+}
+
+.doctor-password-box input {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.doctor-password-box input:focus {
+  box-shadow: none;
+}
+
+.doctor-password-box button {
+  border: none;
+  background: transparent;
+  color: #1685c5;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.doctor-login-submit {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 9px;
+  background: #147fb5;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.doctor-login-submit:hover {
+  background: #105f8b;
+}
+
+.doctor-login-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.doctor-login-message {
+  padding: 12px;
+  margin-top: 16px;
+  border-radius: 8px;
+  background: #fff0f0;
+  color: #a52828;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.doctor-login-register {
+  margin-top: 24px;
+  text-align: center;
+  color: #667987;
+  font-size: 14px;
+}
+
+.doctor-login-register a {
+  color: #1685c5;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.doctor-login-note {
+  margin-top: 26px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #edf7fc;
+  color: #31576b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.doctor-login-note p {
+  margin-bottom: 0;
+}
+
+.doctor-login-footer {
+  padding: 20px;
+  text-align: center;
+  color: #718391;
+  font-size: 13px;
+}
+
+@media (max-width: 500px) {
+  .doctor-login-header {
+    padding: 0 18px;
+  }
+
+  .doctor-login-card {
+    padding: 26px 20px;
+  }
+
+  .doctor-login-card h1 {
+    font-size: 26px;
+  }
+}

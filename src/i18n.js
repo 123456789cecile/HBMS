@@ -1,0 +1,19 @@
+
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import en from "./translations/en.json";
+import rw from "./translations/rw.json";
+
+i18n.use(initReactI18next).init({
+  resources: {
+    en: { translation: en },
+    rw: { translation: rw },
+  },
+  lng: localStorage.getItem("hmsLanguage") || "en",
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false,
+  },
+});
+
+export default i18n;

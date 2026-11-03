@@ -1,0 +1,131 @@
+
+.manage-hospitals {
+  padding: 25px;
+  color: #123c52;
+  background: #f5faff;
+  min-height: 100vh;
+}
+
+.manage-hospitals h1 {
+  margin-bottom: 8px;
+}
+
+.page-description {
+  color: #607785;
+  margin-bottom: 25px;
+}
+
+.hospital-form {
+  max-width: 750px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(18, 60, 82, 0.08);
+}
+
+.hospital-form h2,
+.hospital-table-section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.hospital-form label {
+  display: block;
+  font-weight: 600;
+  margin: 14px 0 7px;
+}
+
+.hospital-form input,
+.hospital-form select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd9e2;
+  border-radius: 7px;
+  font-size: 15px;
+  background: white;
+}
+
+.hospital-form input:focus,
+.hospital-form select:focus {
+  outline: 2px solid #1685c5;
+  border-color: #1685c5;
+}
+
+.coordinate-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.hospital-form button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 13px;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  background: #1685c5;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hospital-form button:hover {
+  background: #123c52;
+}
+
+.hospital-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.success-message {
+  color: #18743a;
+}
+
+.error-message {
+  color: #b42318;
+}
+
+.hospital-table-section {
+  margin-top: 30px;
+}
+
+.hospital-table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 10px;
+}
+
+.hospital-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hospital-table th,
+.hospital-table td {
+  padding: 13px;
+  text-align: left;
+  border-bottom: 1px solid #e3ebf0;
+}
+
+.hospital-table th {
+  background: #123c52;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .manage-hospitals {
+    padding: 12px;
+  }
+
+  .hospital-form {
+    padding: 16px;
+  }
+
+  .coordinate-fields {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

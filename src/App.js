@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 
 import Homepage from "./HomeFiles/Homepages";
 import About from "./HomeFiles/About";
@@ -14,7 +14,8 @@ import AddDoctor from "./HomeFiles/AddDoctor";
 import { LanguageProvider } from "./LanguageContext";
 import LanguageSelector from "./LanguageSelector";
 import HospitalLocations from "./HomeFiles/HospitalLocations";
-
+import AIChat from "./HomeFiles/AIChat";
+import ThemeToggle from "./HomeFiles/themetoggle";
 
 import "./App.css";
 
@@ -25,18 +26,8 @@ export default function App() {
         <h1>HMS</h1>
         <LanguageSelector />
 
-        <nav>
-          <Link to="/">HOME</Link> |{" "}
-          <Link to="/About">About</Link> |{" "}
-          <Link to="/AdminLogin">Admin Login</Link> |{" "}
-          <Link to="/UserLogin">User Login</Link> |{" "}
-          <Link to="/DoctorLogin">Doctor Login</Link> |{" "}
-          <Link to="/UserRegistration">User Registration</Link>
-          <Link to="/HospitalLocations">
-  Hospital Locations
-</Link>
-        </nav>
-
+        
+<ThemeToggle />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/About" element={<About />} />
@@ -48,12 +39,13 @@ export default function App() {
           <Route path="/UserRegistration" element={<UserRegistration />} />
           <Route path="/DoctorLogin" element={<DoctorLogin />} />
           <Route path="/AddDoctor" element={<AddDoctor />} />
-          <Route
-  path="/HospitalLocations"
-  element={<HospitalLocations />}
-/>
+          <Route path="/HospitalLocations" element={<HospitalLocations />}/>
+          <Route path="/AIChat" element={<AIChat />} />
+          <Route path="/ThemeToggle" element={<ThemeToggle/>}/>
+          
         </Routes>
       </div>
     </LanguageProvider>
+    
   );
 }

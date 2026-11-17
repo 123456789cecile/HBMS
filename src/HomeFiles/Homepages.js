@@ -1,302 +1,351 @@
 
-import { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import homepc from "./homepc.png";
-import Image from "./image.png"
 import "../App.css";
-import useTranslatedText from "../useTranslatedText";
 
-// Component ntoya ihindura amagambo ikoresheje translation hook
-function T({ text }) {
-  const translated = useTranslatedText(text);
-  return <>{translated}</>;
-}
+import homepc from "./homepc.png";
+import AIChat from "./AIChat";
+import ThemeToggle from "./themetoggle";
 
-class App extends Component {
-  render() {
+function Homepages() {
     return (
-      <div className="homepage">
-        {/* NAVBAR */}
-        <header className="header">
-          <div className="logo">
-            🏥 <span>HBMS</span>
-          </div>
+        <div className="app">
 
-          <nav className="navbar">
-            <Link to="/"><T text="HOME" /></Link>
-            <Link to="/About"><T text="ABOUT" /></Link>
-            <Link to="/AdminLogin"><T text="ADMIN LOGIN" /></Link>
-            <Link to="/DoctorLogin"><T text="DOCTOR LOGIN" /></Link>
-            <Link to="/UserRegistration">
-              <T text="USER REGISTRATION" />
-            </Link>
-          </nav>
-        </header>
+            {/* NAVBAR */}
+            <header className="header">
+                <div className="logo">
+                    <h2>HBMS</h2>
+                    <span>Hospital Management and bookingSystem</span>
+                </div>
 
-        {/* HERO SECTION */}
-        <section className="hero">
-          <div className="hero-text">
-            <p className="welcome">
-              <T text="WELCOME TO HMS" />
-            </p>
+                <nav className="navbar">
+                    <Link to="/">Home</Link>
+                    <Link to="/About">About</Link>
+                    <Link to="/AdminLogin">Admin Login</Link>
+                    <Link to="/DoctorLogin">Doctor Login</Link>
+                    <Link to="/UserRegistration">Register</Link>
+                    <Link to="/HospitalLocations">HospitalLocation</Link>
+                </nav>
 
-            <h1>
-              <T text="HOSPITAL" />
-              <span><T text="MANAGEMENT SYSTEM" /></span>
-            </h1>
+                <div className="header-actions">
+                    <ThemeToggle />
+                </div>
+            </header>
 
-            <p className="description">
-              <T text="A smart and reliable hospital management platform designed to connect patients, doctors and hospitals in one easy-to-use system." />
-            </p>
+            {/* HERO SECTION */}
+            <section className="hero">
 
-            <div className="buttons">
-              <Link to="/UserRegistration">
-                <button className="primary-btn">
-                  <T text="Register Now" />
-                </button>
-              </Link>
+                {/* LEFT SIDE */}
+                <div className="hero-left-content">
 
-              <a href="#services">
-                <button className="secondary-btn">
-                  <T text="Explore Services" />
-                </button>
-              </a>
-            </div>
-          </div>
+                    <div className="hero-text">
+                        <p className="welcome">
+                            WELCOME TO HBMS
+                        </p>
 
-          <div className="image-container">
-            <img
-              src={homepc}
-              alt="Hospital Management System"
-            />
-          </div>
-        </section>
+                        <h1>
+                            HOSPITAL
+                            <span>MANAGEMENT AND BOOKING  SYSTEM</span>
+                        </h1>
 
-        {/* SERVICES */}
-        <section className="services" id="services">
-          <div className="section-title">
-            <p><T text="OUR SERVICES" /></p>
-            <h2><T text="What Our System Provides" /></h2>
-            <span>
-              <T text="Simple and smart healthcare management for everyone." />
-            </span>
-          </div>
+                        <p className="description">
+                            Your Health Is Our Priority. HBMS helps
+                            patients book appointments, find medical
+                            services and access hospital information
+                            easily and conveniently.
+                        </p>
 
-          <div className="service-container">
-            <div className="service-card">
-              <div className="service-icon">📅</div>
-              <h3><T text="Appointment Booking" /></h3>
-              <p>
-                <T text="Patients can book appointments with available doctors without wasting time." />
-              </p>
-            </div>
+                        <div className="buttons">
+                            <Link
+                                to="/UserRegistration"
+                                className="hero-btn"
+                            >
+                                Get Started
+                            </Link>
 
-            <div className="service-card">
-              <div className="service-icon">👨‍⚕️</div>
-              <h3><T text="Available Doctors" /></h3>
-              <p>
-                <T text="Patients can view active doctors and choose the doctor they need." />
-              </p>
-            </div>
+                            <Link
+                                to="/About"
+                                className="hero-btn secondary-btn"
+                            >
+                                Learn More
+                            </Link>
+                        </div>
+                    </div>
 
-            <div className="service-card">
-              <div className="service-icon">📍</div>
-              <h3><T text="Hospital Location" /></h3>
-              <p>
-                <T text="Find hospital locations and get directions using an integrated map." />
-              </p>
-            </div>
+                    {/* HERO IMAGE */}
+                    <div className="image-container">
+                        <img
+                            src={homepc}
+                            alt="Hospital Management System"
+                        />
+                    </div>
 
-            <div className="service-card">
-              <div className="service-icon">🚑</div>
-              <h3><T text="Emergency Support" /></h3>
-              <p>
-                <T text="Quickly find important hospital information when emergency healthcare is needed." />
-              </p>
-            </div>
-          </div>
-        </section>
+                </div>
 
-        {/* HOW IT WORKS */}
-        <section className="how-it-works">
-          <div className="section-title">
-            <p><T text="HOW IT WORKS" /></p>
-            <h2><T text="Easy Steps To Get Healthcare" /></h2>
-          </div>
+                {/* RIGHT SIDE - AI ASSISTANT */}
+                <div className="hero-ai-right">
 
-          <div className="steps">
-            <div className="step">
-              <div className="step-number">01</div>
-              <h3><T text="Create Account" /></h3>
-              <p>
-                <T text="Register as a patient and create your account." />
-              </p>
-            </div>
+                    <div className="ai-right-heading">
+                        <span>🤖 SMART AI ASSISTANT</span>
 
-            <div className="step">
-              <div className="step-number">02</div>
-              <h3><T text="Find a Doctor" /></h3>
-              <p>
-                <T text="View available doctors and select the doctor you need." />
-              </p>
-            </div>
+                        <h2>
+                            How Can We Help You Today?
+                        </h2>
 
-            <div className="step">
-              <div className="step-number">03</div>
-              <h3><T text="Book Appointment" /></h3>
-              <p>
-                <T text="Choose your preferred date and time for consultation." />
-              </p>
-            </div>
+                        <p>
+                            Ask questions about hospital services
+                            and how to use HBMS.
+                        </p>
+                    </div>
 
-            <div className="step">
-              <div className="step-number">04</div>
-              <h3><T text="Visit Hospital" /></h3>
-              <p>
-                <T text="Use the map to find the hospital and reach your appointment." />
-              </p>
-            </div>
-          </div>
-        </section>
+                    <AIChat />
 
-        {/* FEATURES */}
-        <section className="features">
-          <div className="feature-image">
-            <img src={Image} alt="Healthcare" />
-          </div>
+                </div>
 
-          <div className="feature-text">
-            <p className="small-title">
-              <T text="WHY CHOOSE HMS?" />
-            </p>
+            </section>
 
-            <h2>
-              <T text="Making Healthcare" />
-              <span><T text="Simple & Accessible" /></span>
-            </h2>
+            {/* SERVICES SECTION */}
+            <section className="services" id="services">
 
-            <p>
-              <T text="Our Hospital Management System provides a simple way for patients and hospitals to manage healthcare services digitally." />
-            </p>
+                <div className="section-heading">
+                    <h2>OUR SERVICES</h2>
+                    <p>
+                        We provide simple and reliable hospital
+                        management services.
+                    </p>
+                </div>
 
-            <div className="feature-list">
-              <p>✓ <T text="Easy appointment booking" /></p>
-              <p>✓ <T text="Active doctor management" /></p>
-              <p>✓ <T text="Hospital location and navigation" /></p>
-              <p>✓ <T text="Secure patient registration" /></p>
-              <p>✓ <T text="Simple hospital management" /></p>
-            </div>
-          </div>
-        </section>
+                <div className="services-container">
 
-        {/* STATISTICS */}
-        <section className="statistics">
-          <div className="stat">
-            <h2>100+</h2>
-            <p><T text="Patients" /></p>
-          </div>
+                    <div className="service-card">
+                        <div className="service-icon">📅</div>
+                        <h3>Online Appointment</h3>
+                        <p>
+                            Book hospital appointments easily
+                            from anywhere.
+                        </p>
+                    </div>
 
-          <div className="stat">
-            <h2>25+</h2>
-            <p><T text="Doctors" /></p>
-          </div>
+                    <div className="service-card">
+                        <div className="service-icon">👨‍⚕️</div>
+                        <h3>Doctor Management</h3>
+                        <p>
+                            View available medical departments
+                            and services.
+                        </p>
+                    </div>
 
-          <div className="stat">
-            <h2>10+</h2>
-            <p><T text="Departments" /></p>
-          </div>
+                    <div className="service-card">
+                        <div className="service-icon">🏥</div>
+                        <h3>Hospital Locations</h3>
+                        <p>
+                            Find hospital locations and directions
+                            easily.
+                        </p>
+                    </div>
 
-          <div className="stat">
-            <h2>24/7</h2>
-            <p><T text="Healthcare Support" /></p>
-          </div>
-        </section>
+                    <div className="service-card">
+                        <div className="service-icon">🤖</div>
+                        <h3>AI Assistant</h3>
+                        <p>
+                            Get assistance about hospital services.
+                        </p>
+                    </div>
 
-        {/* EMERGENCY */}
-        <section className="emergency">
-          <div>
-            <p><T text="NEED MEDICAL HELP?" /></p>
-            <h2><T text="Find The Right Hospital For You" /></h2>
-            <span>
-              <T text="Register today and access healthcare services easily." />
-            </span>
-          </div>
+                </div>
+            </section>
 
-          <Link to="/UserRegistration">
-            <button className="emergency-btn">
-              <T text="Get Started" />
-            </button>
-          </Link>
-        </section>
+            {/* HOW IT WORKS */}
+            <section className="how-it-works">
 
-        {/* ABOUT */}
-        <section className="about" id="about">
-          <div className="section-title">
-            <p><T text="ABOUT HMS" /></p>
-            <h2>
-              <T text="About Hospital Management System" />
-            </h2>
-          </div>
+                <div className="section-heading">
+                    <h2>HOW IT WORKS</h2>
+                    <p>
+                        Follow these simple steps to use HBMS.
+                    </p>
+                </div>
 
-          <div className="about-content">
-            <p>
-              <T text="Hospital Management System is a digital platform designed to make healthcare services easier and more accessible." />
-            </p>
+                <div className="steps-container">
 
-            <p>
-              <T text="Patients can register, find available doctors, book appointments and locate hospitals using a map." />
-            </p>
+                    <div className="step-card">
+                        <span>01</span>
+                        <h3>Create Account</h3>
+                        <p>
+                            Register your account to access HBMS.
+                        </p>
+                    </div>
 
-            <p>
-              <T text="Hospital administrators can manage doctors, patients and appointments through the system." />
-            </p>
-          </div>
-        </section>
+                    <div className="step-card">
+                        <span>02</span>
+                        <h3>Login</h3>
+                        <p>
+                            Login to your account securely.
+                        </p>
+                    </div>
 
-        {/* FOOTER */}
-        <footer className="footer">
-          <div className="footer-content">
-            <div className="footer-about">
-              <h2>🏥 HMS</h2>
-              <p>
-                <T text="Smart healthcare management for patients, doctors and hospitals." />
-              </p>
-            </div>
+                    <div className="step-card">
+                        <span>03</span>
+                        <h3>Book Appointment</h3>
+                        <p>
+                            Choose a department and appointment time.
+                        </p>
+                    </div>
 
-            <div className="footer-links">
-              <h3><T text="QUICK LINKS" /></h3>
-              <Link to="/"><T text="Home" /></Link>
-              <Link to="/About"><T text="About" /></Link>
-              <Link to="/AdminLogin"><T text="Admin Login" /></Link>
-              <Link to="/UserRegistration">
-                <T text="User Registration" />
-              </Link>
-            </div>
+                    <div className="step-card">
+                        <span>04</span>
+                        <h3>Get Assistance</h3>
+                        <p>
+                            Receive information about your appointment.
+                        </p>
+                    </div>
 
-            <div className="footer-contact">
-              <h3><T text="CONTACT US" /></h3>
-              <p>📧 hms@gmail.com</p>
-              <p>📞 0787776544</p>
-              <p>📘 Facebook: HMS</p>
-              <p>𝕏 X: HMS123</p>
-            </div>
+                </div>
+            </section>
 
-            <div className="footer-about">
-              <h3><T text="LOCATION" /></h3>
-              <p>📍 <T text="Rwanda" /></p>
-              <p>🏥 <T text="Hospital Management System" /></p>
-            </div>
-          </div>
+            {/* FEATURES */}
+            <section className="features">
 
-          <div className="copyright">
-            <p>
-              © 2026 <T text="Hospital Management System. All Rights Reserved." />
-            </p>
-          </div>
-        </footer>
-      </div>
+                <div className="section-heading">
+                    <h2>WHY CHOOSE HBMS?</h2>
+                    <p>
+                        Making healthcare services easier
+                        and more accessible.
+                    </p>
+                </div>
+
+                <div className="features-container">
+
+                    <div className="feature">
+                        <h3>✔ Easy to Use</h3>
+                        <p>
+                            Simple and friendly system for patients.
+                        </p>
+                    </div>
+
+                    <div className="feature">
+                        <h3>✔ Time Saving</h3>
+                        <p>
+                            Book appointments without unnecessary waiting.
+                        </p>
+                    </div>
+
+                    <div className="feature">
+                        <h3>✔ Secure Information</h3>
+                        <p>
+                            Patient information should be protected.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* STATISTICS */}
+            <section className="statistics">
+
+                <div className="stat-card">
+                    <h2>24/7</h2>
+                    <p>Online Access</p>
+                </div>
+
+                <div className="stat-card">
+                    <h2>100%</h2>
+                    <p>Easy Access</p>
+                </div>
+
+                <div className="stat-card">
+                    <h2>1</h2>
+                    <p>Connected System</p>
+                </div>
+
+                <div className="stat-card">
+                    <h2>AI</h2>
+                    <p>Smart Assistance</p>
+                </div>
+
+            </section>
+
+            {/* EMERGENCY SECTION */}
+            <section className="emergency">
+
+                <h2>NEED URGENT MEDICAL HELP?</h2>
+
+                <p>
+                    For emergencies, contact your local emergency
+                    services or visit the nearest hospital.
+                </p>
+
+                <Link
+                    to="/HospitalLocations"
+                    className="emergency-btn"
+                >
+                    Find Hospital
+                </Link>
+
+            </section>
+
+            {/* ABOUT SECTION */}
+            <section className="about" id="about">
+
+                <div className="about-content">
+                    <h2>ABOUT HBMS</h2>
+
+                    <p>
+                        Hospital Booking and Management System
+                        is designed to make healthcare services easier.
+                        It helps patients book appointments, access
+                        hospital information and find hospital locations.
+                    </p>
+
+                    <Link to="/About" className="about-btn">
+                        Read More
+                    </Link>
+                </div>
+
+            </section>
+
+            {/* FOOTER */}
+            <footer className="footer">
+
+                <div className="footer-container">
+
+                    <div className="footer-about">
+                        <h2>HBMS</h2>
+                        <p>
+                            Hospital Booking and Management System.
+                            Your Health Is Our Priority.
+                        </p>
+                    </div>
+
+                    <div className="footer-links">
+                        <h3>Quick Links</h3>
+
+                        <Link to="/">Home</Link>
+                        <Link to="/About">About</Link>
+                        <Link to="/UserRegistration">Register</Link>
+                        <Link to="/AdminLogin">Admin Login</Link>
+                    </div>
+
+                    <div className="footer-contact">
+                        <h3>Contact Us</h3>
+
+                        <p>📧 hbms@gmail.com</p>
+                        <p>📞 +250 788 000 000</p>
+                        <p>📍 Rwanda</p>
+                    </div>
+
+                </div>
+
+                <div className="footer-bottom">
+                    <p>
+                        © {new Date().getFullYear()} HBMS.
+                        All Rights Reserved.
+                    </p>
+                </div>
+
+            </footer>
+
+        </div>
     );
-  }
 }
 
-export default App;
+export default Homepages;

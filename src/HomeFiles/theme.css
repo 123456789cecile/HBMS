@@ -1,0 +1,100 @@
+
+/* LIGHT THEME */
+:root {
+    color-scheme: light;
+
+    --background: #f5faff;
+    --surface: #ffffff;
+    --card: #ffffff;
+    --navbar: #ffffff;
+    --sidebar: #123c52;
+
+    --text: #123c52;
+    --secondary-text: #64748b;
+
+    --border: #dce6ed;
+    --input-background: #ffffff;
+    --input-text: #123c52;
+
+    --accent: #1685c5;
+    --button-text: #ffffff;
+
+    --shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* DARK THEME */
+:root.dark-mode {
+    color-scheme: dark;
+
+    --background: #101820;
+    --surface: #18232d;
+    --card: #202d38;
+    --navbar: #18232d;
+    --sidebar: #101820;
+
+    --text: #f1f5f9;
+    --secondary-text: #bdc9d4;
+
+    --border: #354653;
+    --input-background: #253541;
+    --input-text: #ffffff;
+
+    --accent: #38a8e8;
+    --button-text: #ffffff;
+
+    --shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* APPLY THEME TO THE WHOLE SYSTEM */
+html,
+body,
+#root {
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+html {
+    background: var(--background);
+}
+
+body,
+#root {
+    background: var(--background) !important;
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* COMMON ELEMENTS */
+h1, h2, h3, h4, h5, h6,
+p, span, label, li {
+    transition: color 0.3s ease;
+}
+
+input,
+textarea,
+select {
+    background-color: var(--input-background);
+    color: var(--input-text);
+    border-color: var(--border);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--secondary-text);
+}
+
+/* THEME BUTTON */
+.theme-button {
+    background: var(--accent);
+    color: var(--button-text);
+    border: none;
+    padding: 9px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.theme-button:hover {
+    opacity: 0.85;
+}
